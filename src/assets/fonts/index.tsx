@@ -1,14 +1,76 @@
 import { createGlobalStyle } from 'styled-components';
  
-import LatoThin from './Lato/Lato-Thin.ttf';
-import LatoThinItalic from './Lato/Lato-ThinItalic.ttf';
-import LatoLight from './Lato/Lato-Light.ttf';
-import LatoLightItalic from './Lato/Lato-LightItalic.ttf';
-import LatoRegular from './Lato/Lato-Regular.ttf';
-import LatoRegularItalic from './Lato/Lato-RegularItalic.ttf';
-import LatoBold from './Lato/Lato-Bold.ttf';
-import LatoBoldItalic from './Lato/Lato-BoldItalic.ttf';
-import LatoBlack from './Lato/Lato-Black.ttf';
-import LatoBlackItalic from './Lato/Lato-BlackItalic.ttf';
+import InterBlack from './Inter/Inter-Black.ttf';
+import InterBold from './Inter/Inter-Bold.ttf';
+import InterExtraBold from './Inter/Inter-ExtraBold.ttf';
+import InterExtraLight from './Inter/Inter-ExtraLight.ttf';
+import InterLight from './Inter/Inter-Light.ttf';
+import InterMedium from './Inter/Inter-Medium.ttf';
+import InterRegular from './Inter/Inter-Regular.ttf';
+import InterSemiBold from './Inter/Inter-SemiBold.ttf';
+import InterThin from './Inter/Inter-Thin.ttf';
 
-export const FontStyles = createGlobalStyle``;
+export const FontStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterBlack});
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterBold});
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterExtraBold});
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterExtraLight});
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterLight});
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterMedium});
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterRegular});
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterSemiBold});
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url(${InterThin});
+    font-weight: 100;
+    font-style: normal;
+  }
+`;

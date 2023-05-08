@@ -27,7 +27,7 @@ As seguintes tecnologias foram utilizadas para desenvolver este app:
 
 | Papel | Tecnologia |
 |-|-|
-| [Prototipagem](#) | [Figma](https://figma.com/) |
+| [Prototipagem](https://figma.fun/TFyq82) | [Figma](https://figma.com/) |
 | Ambiente de execução | [Node](https://nodejs.org/en/) |
 | Linguagem de programação | [TypeScript](https://www.typescriptlang.org/) |
 | Biblioteca de interface de usuário | [React](https://reactjs.org/) |

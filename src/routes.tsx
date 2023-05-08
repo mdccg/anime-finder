@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import Home from './pages/Home';
-import AnimeAnalysis from './pages/AnimeAnalysis';
+import ScreenshotDetails from './pages/ScreenshotDetails';
 
 const routes: RouteObject[] = [
   {
@@ -8,8 +8,8 @@ const routes: RouteObject[] = [
     element: <Home />
   },
   {
-    path: '/anime-analysis',
-    element: <AnimeAnalysis />
+    path: '/screenshot-details',
+    element: <ScreenshotDetails />
   },
 ];
 

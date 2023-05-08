@@ -1,8 +1,9 @@
-const Home = () => {
+import HeroImage from './../../components/HeroImage';
 
+const Home = () => {
   return (
     <div>
-      <span>Página principal</span>
+      <HeroImage />
     </div>
   );
 }
