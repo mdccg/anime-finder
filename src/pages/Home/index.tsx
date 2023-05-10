@@ -1,28 +1,31 @@
+import { useEffect, useState } from 'react';
+import DeveloperCard from './../../components/DeveloperCard';
+import Footer from './../../components/Footer';
+import HomeCard from './../../components/HomeCard';
 import Image1 from './../../assets/images/image-1.png';
 import Image2 from './../../assets/images/image-2.png';
 import Image3 from './../../assets/images/image-3.jpg';
-import HeroImage from './../../components/HeroImage';
-import {
-  CloudArrowUpSolid,
-  Explanation,
-  Subheading,
-  TestDrive,
-  TestDriveBerthold,
-  TestDriveDescription,
-  TestDriveExplanation,
-  TestDriveForm,
-  TestDriveBounds,
-  TestDriveSubmitButton,
-  TestDriveSubmitButtonLabel,
-  TestDriveTitle
-} from './styles';
-import DeveloperCard from '../../components/DeveloperCard';
 import MatheusSource from './../../assets/images/matheus.png';
 import PauloSource from './../../assets/images/paulo.png';
-import HomeCard from '../../components/HomeCard';
-import Footer from '../../components/Footer';
+import SampleSource from './../../assets/images/sample.jpg';
+import HeroImage from './../../components/HeroImage';
+import { CloudArrowUpSolid, Explanation, Subheading, TestDrive, TestDriveBerthold, TestDriveBounds, TestDriveDescription, TestDriveExplanation, TestDriveForm, TestDriveSubmitButton, TestDriveSubmitButtonLabel, TestDriveTitle } from './styles';
 
 const Home = () => {
+  const [blob, setBlob] = useState<Blob>();
+
+  const loadBlob = async () => {
+    fetch(SampleSource)
+      .then(async (response) => {
+        setBlob(await response.blob());
+      })
+      .catch(error => console.error(error));
+  }
+
+  useEffect(() => {
+    loadBlob();
+  }, []);
+
   return (
     <div>
       <HeroImage />
@@ -101,7 +104,7 @@ const Home = () => {
           <TestDriveBounds>
             <TestDriveBerthold />
 
-            <TestDriveSubmitButton>
+            <TestDriveSubmitButton state={{ blob }} to="/screenshot-details">
               <CloudArrowUpSolid />
               <TestDriveSubmitButtonLabel>Enviar essa screenshot</TestDriveSubmitButtonLabel>
             </TestDriveSubmitButton>

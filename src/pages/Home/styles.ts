@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import SampleSource from './../../assets/images/sample.jpg';
 import CloudArrowUpSolidSource from './../../assets/icons/cloud-arrow-up-solid.svg';
+import { Link } from 'react-router-dom';
 
 export const Explanation = styled.div`
   padding: 64px;
@@ -76,7 +77,7 @@ export const TestDriveBerthold = styled.img`
   width: 100%;
 `;
 
-export const TestDriveSubmitButton = styled.button`
+export const TestDriveSubmitButton = styled(Link)`
   margin-top: 24px;
 
   border: none;

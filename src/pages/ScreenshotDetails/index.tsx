@@ -1,13 +1,21 @@
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import Logo from './../../components/Logo';
+
+type LocationStateType = {
+  blob: Blob;
+}
 
 const ScreenshotDetails = () => {
-  const location = useLocation();
+  const { state }: { state: LocationStateType } = useLocation();
 
-  console.log(location);
+  // TODO mostrar toast dizendo que não foi possível carregar a screenshot
+  if (!state.blob) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div>
-      <span>Outra tela</span>
+      <Logo color="black" />
     </div>
   );
 }

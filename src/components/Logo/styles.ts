@@ -6,7 +6,6 @@ export const LogoWrapper = styled.div`
   align-items: center;
   display: flex;
   user-select: none;
-  filter: invert(1);
 
   @media only screen and (max-width: 768px) {
     margin-bottom: 16px;

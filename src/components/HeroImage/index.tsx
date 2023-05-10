@@ -4,7 +4,7 @@ import { CloudArrowUpSolid, Columns, DraggableFileInput, Emphasis, Heading, Hero
 const HeroImage = () => {
   return (
     <HeroImageWrapper>
-      <Logo />
+      <Logo color="white" />
       <Columns>
         <LeftColumn>
           <Heading>
