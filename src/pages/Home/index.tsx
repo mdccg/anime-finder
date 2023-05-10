@@ -2,7 +2,7 @@ import Image1 from './../../assets/images/image-1.png';
 import Image2 from './../../assets/images/image-2.png';
 import Image3 from './../../assets/images/image-3.jpg';
 import HeroImage from './../../components/HeroImage';
-import { Explanation, Subheading } from './styles';
+import { Explanation, Subheading, TestDrive, TestDriveDescription, TestDriveExplanation, TestDriveForm, TestDriveTitle } from './styles';
 import DeveloperCard from '../../components/DeveloperCard';
 import MatheusSource from './../../assets/images/matheus.png';
 import PauloSource from './../../assets/images/paulo.png';
@@ -22,7 +22,7 @@ const Home = () => {
           title="Encontramos a API"
           paragraphs={[
             <>Nós encontramos uma API que é simplesmente incrível para quem adora assistir animes! Com essa ferramenta, você pode enviar uma <strong>screenshot</strong> de uma cena e obter informações detalhadas sobre o anime em questão, incluindo o título, episódio e <strong>até mesmo o tempo exato da cena</strong>.</>,
-            'Agora, se você se deparar com um edit fantástico ou engraçado no TikTok, mas não souber qual é o nome do anime ou qual episódio é, basta fazer uma captura de tela e enviá-la para a API. Ela irá analisar a imagem e fornecer todas as informações relevantes para que você possa encontrar facilmente o anime e a cena desejados.',
+            <>Agora, se você se deparar com um edit fantástico ou engraçado no TikTok, mas não souber qual é o nome do anime ou qual episódio é, basta fazer uma captura de tela e enviá-la para a API. Ela irá analisar a imagem e fornecer todas as informações relevantes para que você possa encontrar facilmente o anime e a cena desejados.</>,
           ]} />
 
         <HomeCard
@@ -30,9 +30,9 @@ const Home = () => {
           alternativeText="Captura de tela do cliente original da API Trace Moe"
           title="全て日本語です！"
           paragraphs={[
-            `Você entendeu o que está escrito acima? Não? Oh, que pena... ;'( Mas, não se preocupe, eu vou traduzir para você. Está escrito:`,
-            '"Está tudo em japonês!"',
-            'E é justamente esse o problema. A maioria das informações retornadas pela API está em japonês. Além disso, elas não estão tão organizadas de modo coeso e acabam por empobrecer a experiência do usuário.'
+            <>Você entendeu o que está escrito acima? Não? Oh, que pena&hellip; ;'( Mas, não se preocupe, eu vou traduzir para você. Está escrito:</>,
+            <>"Está tudo em japonês!"</>,
+            <>E é justamente esse o problema. A maioria das informações retornadas pela API está em japonês. Além disso, elas não estão tão organizadas de modo coeso e acabam por empobrecer a experiência do usuário.</>
           ]}
           isImageShadowed />
 
@@ -41,10 +41,10 @@ const Home = () => {
           alternativeText="Fotografia de um código-fonte em um notebook"
           title="A solução&hellip;"
           paragraphs={[
-            'Mas, não se preocupe novamente!',
-            'Pois dois estudantes do Curso Superior de TSI do IFMS de Aquidauana aproveitaram a deixa para trabalhar duro e entregar como atividade de Construção de Páginas Web IV um cliente dessa API completamente em português brasileiro.'
+            <>Mas, não se preocupe novamente!</>,
+            <>Pois dois estudantes do Curso Superior de TSI do IFMS de Aquidauana aproveitaram a deixa para trabalhar duro e entregar como atividade de Construção de Páginas Web IV um cliente dessa API completamente em português brasileiro.</>
           ]}
-          emphasizedMessage="E esses dois estudantes são..."
+          emphasizedMessage="E esses dois estudantes são&hellip;"
           isImageShadowed
           hideImageWhenThereLowerResolution />
       </Explanation>
@@ -74,6 +74,17 @@ const Home = () => {
         }}
         profilePicture={MatheusSource}
         pictureHeight={531} />
+
+      <TestDrive>
+        <TestDriveExplanation>
+          <TestDriveTitle>Mas que tal um test drive?</TestDriveTitle>
+          <TestDriveDescription>Para evitar spoilers escandalosos, optei por escolher uma screenshot do primeiro episódio de um anime muito conhecido que já foi lançado há algum tempo. Acredito que essa seja a melhor maneira de mostrar como o app funciona sem comprometer a experiência da comunidade otaku.</TestDriveDescription>
+        </TestDriveExplanation>
+        
+        <TestDriveForm>
+          
+        </TestDriveForm>
+      </TestDrive>
     </div>
   );
 }

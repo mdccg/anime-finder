@@ -15,7 +15,7 @@ type HomeCardProps = {
   cardPicture: string;
   alternativeText: string;
   title: string;
-  paragraphs: (ReactNode | string)[];
+  paragraphs: ReactNode[];
   isImageShadowed?: boolean;
   hideImageWhenThereLowerResolution?: boolean;
   emphasizedMessage?: string;

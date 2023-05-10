@@ -8,7 +8,7 @@ import {
   DeveloperCourse,
   LeftDeveloperDescription,
   LeftDeveloperName,
-  DeveloperSocialMediaList,
+  LeftDeveloperSocialMediaList,
   Github,
   Gmail,
   Instagram,
@@ -20,7 +20,8 @@ import {
   RightDeveloperCardPhotoSpace,
   RightDeveloperDescription,
   RightDeveloperName,
-  WhatsApp
+  WhatsApp,
+  RightDeveloperSocialMediaList
 } from './styles';
 
 type DeveloperCardProps = {
@@ -58,6 +59,7 @@ const DeveloperCard = ({
   const DeveloperName = isLeft ? LeftDeveloperName : RightDeveloperName;
   const DeveloperDescription = isLeft ? LeftDeveloperDescription : RightDeveloperDescription;
   const DeveloperImage = isLeft ? LeftDeveloperImage : RightDeveloperImage;
+  const DeveloperSocialMediaList = isLeft ? LeftDeveloperSocialMediaList : RightDeveloperSocialMediaList;
 
   return (
     <DeveloperCardWrapper>

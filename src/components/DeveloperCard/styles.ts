@@ -104,20 +104,29 @@ export const RightDeveloperDescription = styled(LeftDeveloperDescription)`
   width: 70%;
 `;
 
-export const DeveloperSocialMediaList = styled.div`
+export const LeftDeveloperSocialMediaList = styled.div`
   margin-top: 96px;
 
   flex-direction: row;
   align-items: center;
   display: flex;
+
+  & > * {
+    margin-left: 16px;
+  }
+`;
+
+export const RightDeveloperSocialMediaList = styled(LeftDeveloperSocialMediaList)`
+  & > * {
+    margin-right: 16px;
+    margin-left: 0;
+  }
 `;
 
 const socialMediaIcon = css`
   width: 32px;
   height: 32px;
   filter: invert(1);
-
-  margin-right: 16px;
 `;
 
 export const Github = styled.img`
