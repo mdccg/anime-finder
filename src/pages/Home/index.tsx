@@ -2,11 +2,25 @@ import Image1 from './../../assets/images/image-1.png';
 import Image2 from './../../assets/images/image-2.png';
 import Image3 from './../../assets/images/image-3.jpg';
 import HeroImage from './../../components/HeroImage';
-import { Explanation, Subheading, TestDrive, TestDriveDescription, TestDriveExplanation, TestDriveForm, TestDriveTitle } from './styles';
+import {
+  CloudArrowUpSolid,
+  Explanation,
+  Subheading,
+  TestDrive,
+  TestDriveBerthold,
+  TestDriveDescription,
+  TestDriveExplanation,
+  TestDriveForm,
+  TestDriveBounds,
+  TestDriveSubmitButton,
+  TestDriveSubmitButtonLabel,
+  TestDriveTitle
+} from './styles';
 import DeveloperCard from '../../components/DeveloperCard';
 import MatheusSource from './../../assets/images/matheus.png';
 import PauloSource from './../../assets/images/paulo.png';
 import HomeCard from '../../components/HomeCard';
+import Footer from '../../components/Footer';
 
 const Home = () => {
   return (
@@ -18,10 +32,12 @@ const Home = () => {
 
         <HomeCard
           cardPicture={Image1}
+          cardPictureCustomHeight={320}
           alternativeText="Representação gráfica da comunicação entre APIs envolvendo a Trace Moe"
           title="Encontramos a API"
           paragraphs={[
-            <>Nós encontramos uma API que é simplesmente incrível para quem adora assistir animes! Com essa ferramenta, você pode enviar uma <strong>screenshot</strong> de uma cena e obter informações detalhadas sobre o anime em questão, incluindo o título, episódio e <strong>até mesmo o tempo exato da cena</strong>.</>,
+            <>Nós encontramos uma API que é simplesmente incrível para quem adora assistir animes! Com essa ferramenta,
+            você pode enviar uma <strong>screenshot</strong> de uma cena e obter informações detalhadas sobre o anime em questão, incluindo o título, episódio e <strong>até mesmo o tempo exato da cena</strong>.</>,
             <>Agora, se você se deparar com um edit fantástico ou engraçado no TikTok, mas não souber qual é o nome do anime ou qual episódio é, basta fazer uma captura de tela e enviá-la para a API. Ela irá analisar a imagem e fornecer todas as informações relevantes para que você possa encontrar facilmente o anime e a cena desejados.</>,
           ]} />
 
@@ -82,9 +98,18 @@ const Home = () => {
         </TestDriveExplanation>
         
         <TestDriveForm>
-          
+          <TestDriveBounds>
+            <TestDriveBerthold />
+
+            <TestDriveSubmitButton>
+              <CloudArrowUpSolid />
+              <TestDriveSubmitButtonLabel>Enviar essa screenshot</TestDriveSubmitButtonLabel>
+            </TestDriveSubmitButton>
+          </TestDriveBounds>
         </TestDriveForm>
       </TestDrive>
+
+      <Footer />
     </div>
   );
 }

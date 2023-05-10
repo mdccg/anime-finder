@@ -13,6 +13,7 @@ import {
 
 type HomeCardProps = {
   cardPicture: string;
+  cardPictureCustomHeight?: number;
   alternativeText: string;
   title: string;
   paragraphs: ReactNode[];
@@ -23,6 +24,7 @@ type HomeCardProps = {
 
 const HomeCard = ({
   cardPicture,
+  cardPictureCustomHeight,
   alternativeText,
   title,
   paragraphs,
@@ -39,6 +41,7 @@ const HomeCard = ({
         <CardImage
           src={cardPicture}
           alt={alternativeText}
+          style={cardPictureCustomHeight ? { height: `${cardPictureCustomHeight}px`, width: 'fit-content' } : {}}
         />
       </CardFrame>
       <CardArticle>

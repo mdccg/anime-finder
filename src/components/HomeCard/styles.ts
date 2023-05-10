@@ -28,10 +28,12 @@ export const CardLastFrame = styled(CardNonLastFrame)`
 
 export const CardNonShadowedImage = styled.img`
   width: 62.5%;
+  max-width: 100%;
 
   @media only screen and (max-width: 768px) {
     margin-top: 16px;
     width: 100%;
+    height: auto !important;
   }
 `;
 

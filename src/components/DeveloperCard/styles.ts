@@ -14,7 +14,7 @@ export const RightDeveloperCardWrapper = styled(LeftDeveloperCardWrapper)`
 `;
 
 export const LeftDeveloperCardBody = styled.div`
-  padding: 96px 64px 40px;
+  padding: 96px 64px 64px;
   box-sizing: border-box;
 
   flex-direction: row;
@@ -73,6 +73,11 @@ export const LeftDeveloperCardContent = styled.div`
 export const RightDeveloperCardContent = styled(LeftDeveloperCardContent)`
   align-items: flex-start;
   text-align: left;
+
+  @media only screen and (max-width: 768px) {
+    align-items: flex-end;
+    text-align: right;
+  }
 `;
 
 export const LeftDeveloperName = styled.span`
@@ -113,6 +118,14 @@ export const LeftDeveloperSocialMediaList = styled.div`
 
   & > * {
     margin-left: 16px;
+    margin-right: 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    & > * {
+      margin-right: 16px;
+      margin-left: 0;
+    }
   }
 `;
 
@@ -120,6 +133,13 @@ export const RightDeveloperSocialMediaList = styled(LeftDeveloperSocialMediaList
   & > * {
     margin-right: 16px;
     margin-left: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    & > * {
+      margin-left: 16px;
+      margin-right: 0;
+    }
   }
 `;
 
