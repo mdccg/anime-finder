@@ -1,4 +1,4 @@
-import Logo from '../Logo';
+import Logo from './../Logo';
 import { CloudArrowUpSolid, Columns, DraggableFileInput, Emphasis, Heading, HeroImageWrapper, DraggableFileInputLabel, LeftColumn, RightColumn, WebsiteDescription, ButtonFileInput, ImagesSolid, ButtonFileInputLabel, DraggableFileInputBounds } from './styles';
 
 const HeroImage = () => {

@@ -10,7 +10,8 @@ export const HeroImageWrapper = styled.div`
     url(${Wallpaper});
   background-size: cover;
   background-position-y: bottom;
-  
+  background-position-x: center;
+
   padding: 32px 64px;
   min-height: 100vh;
   box-sizing: border-box;
@@ -18,6 +19,10 @@ export const HeroImageWrapper = styled.div`
   
   flex-direction: column;
   display: flex;
+
+  @media only screen and (max-width: 768px) {
+    padding: 32px;
+  }
 `;
 
 export const Columns = styled.div`
@@ -25,6 +30,10 @@ export const Columns = styled.div`
   align-items: center;
   display: flex;
   flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftColumn = styled.div`
@@ -32,6 +41,10 @@ export const LeftColumn = styled.div`
   flex-direction: column;
   display: flex;
   flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 64px;
+  }
 `;
 
 export const RightColumn = styled.div`
@@ -45,6 +58,10 @@ export const Heading = styled.h2`
   ${smoothShadow.text};
   font-size: 225%;
   margin-bottom: 16px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 175%;
+  }
 `;
 
 export const Emphasis = styled.span`
@@ -90,7 +107,9 @@ export const DraggableFileInputLabel = styled.label`
   margin-top: 8px;
   
   font-size: 150%;
+  text-align: center;
   font-weight: bold;
+  line-height: 1.5;
 
   cursor: grab;
 `;

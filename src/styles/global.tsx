@@ -18,7 +18,7 @@ export const smoothShadow = {
   text: css`
     text-shadow: ${shadowValue};
   `,
-  div: css`
+  box: css`
     box-shadow: ${shadowValue};
   `
 };
