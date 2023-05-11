@@ -51,6 +51,10 @@ export const MainContent = styled.main`
   flex-direction: row;
   align-items: center;
   display: flex;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const SelectedScene = styled.div`

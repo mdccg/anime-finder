@@ -5,6 +5,7 @@ import Footer from './../../components/Footer';
 import Logo from './../../components/Logo';
 import TraceMoeService from './../../services/TraceMoeService';
 import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SelectedScene } from './styles';
+import ReadOnlyProgressBar from '../../components/ReadOnlyProgressBar';
 
 type LocationStateType = {
   blob: Blob;
@@ -55,6 +56,8 @@ const ScreenshotDetails = () => {
         finishFetching();
         return;
       }
+
+      console.log(scenes.at(0));
       
       setSelectedScene(scenes.at(0) as Scene);
       setOtherScenes(scenes.slice(1));
@@ -62,7 +65,7 @@ const ScreenshotDetails = () => {
     }
 
     fetchData();
-  }, []);
+  }, [state, traceMoeService]);
 
   if (!state || !state.blob) {
     return <Navigate to="/" replace />;
@@ -85,12 +88,16 @@ const ScreenshotDetails = () => {
           </>
         )}
 
-        {hadFetched && (
+        {hadFetched && selectedScene && (
           <MainContent>
             <SelectedScene>
               <video width="100%" controls>
-                <source src={selectedScene?.video} />
+                <source src={selectedScene.video} />
               </video>
+
+              <ReadOnlyProgressBar
+                exactMoment={selectedScene.from}
+                episodeDuration={selectedScene.to} />
             </SelectedScene>
             
             <OtherScenes>

@@ -1,21 +1,25 @@
 import SceneDTO from './../data-transports/SceneDTO';
 
 class Scene {
+  englishTitle: string;
   thumbnail: string;
   video: string;
   similarity: number;
-  startTime: number;
-  endTime: number;
+  episode: number;
+  from: number;
+  to: number;
   notSafeToWork: boolean;
 
   constructor(sceneObject: SceneDTO) {
     const { anilist: { title, isAdult }, episode, from, to, similarity, video, image } = sceneObject;
     
+    this.englishTitle = title.english;
     this.thumbnail = image;
     this.video = video;
     this.similarity = similarity;
-    this.startTime = from;
-    this.endTime = to;
+    this.episode = episode;
+    this.from = from;
+    this.to = to;
     this.notSafeToWork = isAdult;
   }
 

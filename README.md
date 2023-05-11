@@ -11,11 +11,6 @@
     - [Pré-requisitos](#pré-requisitos)
     - [Passo a passo](#passo-a-passo)
 
-## _To-do list_
-
-- ~~Substituir `531px` pelas duas medidas~~
-- 
-
 ## Motivação
 
 Este app foi desenvolvido com o objetivo de consumir duas APIs: a [Trace Moe](https://soruly.github.io/trace.moe-api/#/) e a [AniList](https://github.com/AniList/ApiV2-GraphQL-Docs). Ao consumir a API Trace Moe, o app consegue reconhecer os episódios e animes correspondentes às imagens inseridas pelos usuários. Além disso, utilizando a API AniList, é possível trazer informações detalhadas sobre cada um dos animes encontrados.
