@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import Scene from './../classes/Scene';
-import TraceMoeDTO from '../data-transports/TraceMoeDTO';
+import TraceMoeDTO from './../data-transports/TraceMoeDTO';
 
 class TraceMoeService {
   private _http: AxiosInstance;
@@ -20,7 +20,11 @@ class TraceMoeService {
       return null;
     }
 
-    const scenes: Scene[] = data.result.map((sceneObject) => new Scene(sceneObject)).filter(({ notSafeToWork }) => !notSafeToWork);
+    const scenes: Scene[] = data.result
+      .map((sceneObject) => new Scene(sceneObject))
+      .filter(({ notSafeToWork }) => !notSafeToWork)
+      .sort((a, b) => Number(a.similarity) + Number(b.similarity));
+
     return scenes;
   }
 }

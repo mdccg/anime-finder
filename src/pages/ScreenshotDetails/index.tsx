@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Scene from './../../classes/Scene';
 import Footer from './../../components/Footer';
-import TraceMoeService from './../../services/TraceMoeService';
 import Logo from './../../components/Logo';
-import { Header, ImagesSolid, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, MainContent, SelectedScene, OtherScenes } from './styles';
-import Scene from '../../classes/Scene';
+import TraceMoeService from './../../services/TraceMoeService';
+import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SelectedScene } from './styles';
 
 type LocationStateType = {
   blob: Blob;
@@ -61,10 +61,10 @@ const ScreenshotDetails = () => {
       finishFetching();
     }
 
-    // fetchData();
+    fetchData();
   }, []);
 
-  if (!state || !state.blob || !hasNoResults) {
+  if (!state || !state.blob) {
     return <Navigate to="/" replace />;
   }
 

@@ -46,6 +46,8 @@ ImagesSolid.defaultProps = {
 };
 
 export const MainContent = styled.main`
+  margin-top: 64px;
+
   flex-direction: row;
   align-items: center;
   display: flex;
@@ -60,5 +62,5 @@ export const SelectedScene = styled.div`
 export const OtherScenes = styled.div`
   flex-direction: column;
   display: flex;
-  flex: calc(1 / 3);
+  flex: calc(1 / 2);
 `;

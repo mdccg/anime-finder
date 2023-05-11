@@ -3,7 +3,7 @@ import SceneDTO from './../data-transports/SceneDTO';
 class Scene {
   thumbnail: string;
   video: string;
-  similarity: string;
+  similarity: number;
   startTime: number;
   endTime: number;
   notSafeToWork: boolean;
@@ -13,10 +13,14 @@ class Scene {
     
     this.thumbnail = image;
     this.video = video;
-    this.similarity = `${Number((similarity * 1e2).toFixed(2)).toLocaleString()}%`;
+    this.similarity = similarity;
     this.startTime = from;
     this.endTime = to;
     this.notSafeToWork = isAdult;
+  }
+
+  public getSimilarityString(): string {
+    return `${Number((this.similarity * 1e2).toFixed(2)).toLocaleString()}%`;
   }
 }
 
