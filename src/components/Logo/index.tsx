@@ -6,14 +6,12 @@ type LogoProps = {
 }
 
 const Logo = ({ color }: LogoProps) => (
-  <LogoWrapper style={{
-    filter: `invert(${color === 'black' ? 0 : 1})`
-  }}>
-    <NarutoIcon />
-    <WebsiteTitle>
-      <Link to="/">anime.snap</Link>
-    </WebsiteTitle>
-  </LogoWrapper>
+  <Link to="/">
+    <LogoWrapper style={{ filter: `invert(${color === 'black' ? 0 : 1})` }}>
+      <NarutoIcon />
+      <WebsiteTitle>anime.snap</WebsiteTitle>
+    </LogoWrapper>
+  </Link>
 );
 
 export default Logo;

@@ -60,10 +60,11 @@ const DeveloperCard = ({
   const DeveloperDescription = isLeft ? LeftDeveloperDescription : RightDeveloperDescription;
   const DeveloperImage = isLeft ? LeftDeveloperImage : RightDeveloperImage;
   const DeveloperSocialMediaList = isLeft ? LeftDeveloperSocialMediaList : RightDeveloperSocialMediaList;
+  const responsivePaddingBottom = document.body.offsetWidth <= 768 ? `${pictureHeight + 32}px` : '64px';
 
   return (
     <DeveloperCardWrapper>
-      <DeveloperCardBody>
+      <DeveloperCardBody style={{ paddingBottom: responsivePaddingBottom }}>
         <DeveloperCardPhotoSpace>&nbsp;</DeveloperCardPhotoSpace>
         <DeveloperCardContent>
           <DeveloperName>{developerName}</DeveloperName>

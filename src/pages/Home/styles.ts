@@ -52,7 +52,7 @@ export const TestDriveTitle = styled.h2`
   font-weight: bold;
   
   margin-bottom: 16px;
-  `;
+`;
 
 export const TestDriveDescription = styled.p`
   font-size: 125%;
@@ -64,7 +64,7 @@ export const TestDriveBounds = styled.div`
   flex-direction: column;
   align-items: flex-end;
   display: flex;
-  width: 50%;
+  width: 62.5%;
 
   @media only screen and (max-width: 768px) {
     margin-top: 32px;
@@ -99,7 +99,7 @@ export const CloudArrowUpSolid = styled.img`
 `;
 
 export const TestDriveSubmitButtonLabel = styled.span`
-  font-size: 175%;
+  font-size: 162.5%;
   font-weight: bold;
 
   @media only screen and (max-width: 768px) {

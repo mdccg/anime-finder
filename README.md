@@ -13,7 +13,8 @@
 
 ## _To-do list_
 
-- Substituir `531px` pelas duas medidas;
+- ~~Substituir `531px` pelas duas medidas~~
+- 
 
 ## Motivação
 

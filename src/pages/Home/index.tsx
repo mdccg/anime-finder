@@ -12,7 +12,7 @@ import HeroImage from './../../components/HeroImage';
 import { CloudArrowUpSolid, Explanation, Subheading, TestDrive, TestDriveBerthold, TestDriveBounds, TestDriveDescription, TestDriveExplanation, TestDriveForm, TestDriveSubmitButton, TestDriveSubmitButtonLabel, TestDriveTitle } from './styles';
 
 const Home = () => {
-  const [blob, setBlob] = useState<Blob>();
+  const [blob, setBlob] = useState<Blob | undefined>();
 
   const loadBlob = async () => {
     fetch(SampleSource)
@@ -104,7 +104,7 @@ const Home = () => {
           <TestDriveBounds>
             <TestDriveBerthold />
 
-            <TestDriveSubmitButton state={{ blob }} to="/screenshot-details">
+            <TestDriveSubmitButton state={{ blob }} to={blob ? '/screenshot-details' : '#'}>
               <CloudArrowUpSolid />
               <TestDriveSubmitButtonLabel>Enviar essa screenshot</TestDriveSubmitButtonLabel>
             </TestDriveSubmitButton>
