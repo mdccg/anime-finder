@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import Footer from './../../components/Footer';
 import TraceMoeService from './../../services/TraceMoeService';
 import Logo from './../../components/Logo';
-import { Header, ImagesSolid, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel } from './styles';
+import { Header, ImagesSolid, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, MainContent, SelectedScene, OtherScenes } from './styles';
 import Scene from '../../classes/Scene';
 
 type LocationStateType = {
@@ -18,7 +18,8 @@ const ScreenshotDetails = () => {
   const [otherScenes, setOtherScenes] = useState<Scene[] | null>(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [hadFetched, setHadFetched] = useState<boolean>(false);
-  
+  const [hasNoResults, setHasNoResults] = useState<boolean>(false);
+
   const startFetching = () => {
     setIsFetching(true);
     setHadFetched(false);
@@ -50,20 +51,20 @@ const ScreenshotDetails = () => {
       if (scenes.length === 0) {
         // TODO mostrar toast de erro dizendo que não foi possível localizar nenhum anime
         // com essa screenshot
+        setHasNoResults(true);
         finishFetching();
         return;
       }
       
       setSelectedScene(scenes.at(0) as Scene);
       setOtherScenes(scenes.slice(1));
-
       finishFetching();
     }
 
-    fetchData();
+    // fetchData();
   }, []);
 
-  if (!state || !state.blob) {
+  if (!state || !state.blob || !hasNoResults) {
     return <Navigate to="/" replace />;
   }
 
@@ -77,6 +78,26 @@ const ScreenshotDetails = () => {
             <PickAnotherPictureButtonLabel>Escolher outra imagem</PickAnotherPictureButtonLabel>
           </PickAnotherPictureButton>
         </Header>
+        
+        {isFetching && (
+          <>
+            {/* TODO loading aqui */}
+          </>
+        )}
+
+        {hadFetched && (
+          <MainContent>
+            <SelectedScene>
+              <video width="100%" controls>
+                <source src={selectedScene?.video} />
+              </video>
+            </SelectedScene>
+            
+            <OtherScenes>
+              &nbsp;
+            </OtherScenes>
+          </MainContent>
+        )}
       </PageWrapper>
       <Footer />
     </>

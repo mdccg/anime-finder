@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ImagesSolidSource from './../../assets/icons/images-solid.svg';
 
-export const PageWrapper = styled.main`
+export const PageWrapper = styled.div`
   padding: 24px 48px;
   box-sizing: border-box;
 `;
@@ -44,3 +44,21 @@ ImagesSolid.defaultProps = {
   src: ImagesSolidSource,
   alt: 'Ícone de uma fotografia de uma paisagem montanhosa'
 };
+
+export const MainContent = styled.main`
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+`;
+
+export const SelectedScene = styled.div`
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+`;
+
+export const OtherScenes = styled.div`
+  flex-direction: column;
+  display: flex;
+  flex: calc(1 / 3);
+`;
