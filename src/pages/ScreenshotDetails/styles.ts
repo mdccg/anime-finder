@@ -52,6 +52,8 @@ export const MainContent = styled.main`
   align-items: center;
   display: flex;
 
+  min-height: 100vh;
+
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -67,4 +69,13 @@ export const OtherScenes = styled.div`
   flex-direction: column;
   display: flex;
   flex: calc(1 / 2);
+`;
+
+export const Subheading = styled.h2`
+  margin-top: 64px;
+`;
+
+export const SceneDescription = styled.span`
+  line-height: 1.5;
+  margin-bottom: 32px;
 `;

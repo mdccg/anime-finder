@@ -1,4 +1,5 @@
 type Anilist = {
+  id: number;
   idMal: number;
   title: { [key: string]: string; };
   synonyms: string[];

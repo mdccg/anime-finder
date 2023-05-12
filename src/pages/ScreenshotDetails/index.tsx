@@ -4,8 +4,7 @@ import Scene from './../../classes/Scene';
 import Footer from './../../components/Footer';
 import Logo from './../../components/Logo';
 import TraceMoeService from './../../services/TraceMoeService';
-import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SelectedScene } from './styles';
-import ReadOnlyProgressBar from '../../components/ReadOnlyProgressBar';
+import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SceneDescription, SelectedScene, Subheading } from './styles';
 
 type LocationStateType = {
   blob: Blob;
@@ -57,14 +56,13 @@ const ScreenshotDetails = () => {
         return;
       }
 
-      console.log(scenes.at(0));
-      
       setSelectedScene(scenes.at(0) as Scene);
       setOtherScenes(scenes.slice(1));
       finishFetching();
     }
 
     fetchData();
+    finishFetching();
   }, [state, traceMoeService]);
 
   if (!state || !state.blob) {
@@ -78,33 +76,39 @@ const ScreenshotDetails = () => {
           <Logo color="black" />
           <PickAnotherPictureButton>
             <ImagesSolid />
-            <PickAnotherPictureButtonLabel>Escolher outra imagem</PickAnotherPictureButtonLabel>
+            <PickAnotherPictureButtonLabel>
+              Escolher outra imagem
+            </PickAnotherPictureButtonLabel>
           </PickAnotherPictureButton>
         </Header>
-        
-        {isFetching && (
-          <>
-            {/* TODO loading aqui */}
-          </>
-        )}
+
+        {isFetching && <>{/* TODO loading aqui */}</>}
 
         {hadFetched && selectedScene && (
           <MainContent>
             <SelectedScene>
               <video width="100%" controls>
-                <source src={selectedScene.video} />
+                <source src={selectedScene.videoURL} />
               </video>
 
-              <ReadOnlyProgressBar
-                exactMoment={selectedScene.from}
-                episodeDuration={selectedScene.to} />
+              <Subheading>Detalhes da cena</Subheading>
+              <SceneDescription>
+                Essa cena provavelmente é
+                do <strong>{selectedScene.episode}º</strong> episódio
+                de <strong>{selectedScene.portugueseTitle}</strong> ({selectedScene.originalTitle}),
+                por volta do minuto {selectedScene.getReadableInitialInstant()}.
+              </SceneDescription>
+              <SceneDescription>
+                Além disso, a cena encontrada é <strong>{selectedScene.getReadableSimilarity()}</strong> similar
+                à captura de tela que você enviou para análise.
+              </SceneDescription>
             </SelectedScene>
-            
-            <OtherScenes>
-              &nbsp;
-            </OtherScenes>
+
+            <OtherScenes>&nbsp;</OtherScenes>
           </MainContent>
         )}
+
+        {hasNoResults && <>{/* TODO nao encontrado aqui */}</>}
       </PageWrapper>
       <Footer />
     </>
