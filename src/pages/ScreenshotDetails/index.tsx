@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { PacmanLoader } from 'react-spinners';
+import GenericPanel from '../../components/GenericPanel';
+import SceneCard from '../../components/SceneCard';
+import HeartCrackSolidSource from './../../assets/icons/heart-crack-solid.svg';
 import Scene from './../../classes/Scene';
 import Footer from './../../components/Footer';
 import Logo from './../../components/Logo';
 import TraceMoeService from './../../services/TraceMoeService';
-import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SceneDescription, SelectedScene, Subheading } from './styles';
-import SceneCard from '../../components/SceneCard';
-import GenericPanel from '../../components/GenericPanel';
-import { PacmanLoader } from 'react-spinners';
-import HeartCrackSolidSource from './../../assets/icons/heart-crack-solid.svg';
+import { Header, MainContent, OtherScenes, PageWrapper, SceneDescription, SelectedScene, Subheading } from './styles';
 
 type LocationStateType = {
   blob: Blob;
@@ -105,7 +105,7 @@ const ScreenshotDetails = () => {
               </video>
 
               <Subheading>Detalhes da cena</Subheading>
-              <SceneDescription>
+              <SceneDescription data-cy="first-scene-description">
                 Essa cena provavelmente é
                 do <strong>{selectedScene.episode}º</strong> episódio
                 de <strong>{selectedScene.portugueseTitle}</strong> ({selectedScene.originalTitle}),
@@ -123,7 +123,7 @@ const ScreenshotDetails = () => {
                   <SceneCard  
                     key={scene.index}
                     scene={scene}
-                    selectedNewScene={selectNewScene}
+                    selectNewScene={selectNewScene}
                     selectedSceneIndex={selectedScene.index} />
                 ))}
               </OtherScenes>

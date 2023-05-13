@@ -104,7 +104,10 @@ const Home = () => {
           <TestDriveBounds>
             <TestDriveBerthold />
 
-            <TestDriveSubmitButton state={{ blob }} to={blob ? '/screenshot-details' : '#'}>
+            <TestDriveSubmitButton
+              data-cy="test-drive-submit-button"
+              state={{ blob }}
+              to={blob ? '/screenshot-details' : '#'}>
               <CloudArrowUpSolid />
               <TestDriveSubmitButtonLabel>Enviar essa screenshot</TestDriveSubmitButtonLabel>
             </TestDriveSubmitButton>

@@ -1,6 +1,6 @@
-import Logo from './../Logo';
 import { useNavigate } from 'react-router-dom';
-import { CloudArrowUpSolid, Columns, DraggableFileInput, Emphasis, Heading, HeroImageWrapper, DraggableFileInputLabel, LeftColumn, RightColumn, WebsiteDescription, ButtonFileInput, ImagesSolid, ButtonFileInputLabel, DraggableFileInputBounds } from './styles';
+import Logo from './../Logo';
+import { ButtonFileInput, ButtonFileInputLabel, Columns, DraggableFileInputBounds, Emphasis, Heading, HeroImageWrapper, ImagesSolid, LeftColumn, RightColumn, WebsiteDescription } from './styles';
 
 const HeroImage = () => {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ const HeroImage = () => {
                 do computador
               </ButtonFileInputLabel>
               <input
+                data-cy="input"
                 type="file"
                 id="arquivo"
                 onChange={handleFileSelect}

@@ -7,7 +7,7 @@ type LogoProps = {
 
 const Logo = ({ color }: LogoProps) => (
   <Link to="/">
-    <LogoWrapper style={{ filter: `invert(${color === 'black' ? 0 : 1})` }}>
+    <LogoWrapper data-cy="logo-wrapper" style={{ filter: `invert(${color === 'black' ? 0 : 1})` }}>
       <NarutoIcon />
       <WebsiteTitle>anime.snap</WebsiteTitle>
     </LogoWrapper>

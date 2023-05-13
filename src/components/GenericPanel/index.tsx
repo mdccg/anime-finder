@@ -11,7 +11,7 @@ const GenericPanel = ({ message, component, imageURL }: GenericPanelProps) => {
     <GenericPanelWrapper>
       {imageURL && <GenericPanelImage src={imageURL} alt="Essa imagem pode conter algum emoji ou algo do gênero" />}
       {component && component}
-      <GenericPanelMessage>{message}</GenericPanelMessage>
+      <GenericPanelMessage data-cy="generic-panel-message">{message}</GenericPanelMessage>
     </GenericPanelWrapper>
   );
 }

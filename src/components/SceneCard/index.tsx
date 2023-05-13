@@ -3,20 +3,20 @@ import { SceneCardAnimeTitle, SceneCardEpisodeOrdinaryNumber, SceneCardInformati
 
 type SceneCardProps = {
   scene: Scene;
-  selectedNewScene: (indexArg: number) => void;
+  selectNewScene: (indexArg: number) => void;
   selectedSceneIndex: number;
 }
 
 const SceneCard = ({
   scene,
-  selectedNewScene,
+  selectNewScene,
   selectedSceneIndex
 }: SceneCardProps) => {
   const isSelected = scene.index === selectedSceneIndex;
 
   const handleClick = () => {
     if (isSelected) return;
-    selectedNewScene(scene.index);
+    selectNewScene(scene.index);
   }
   
   return (
@@ -26,9 +26,9 @@ const SceneCard = ({
     }}>
       <SceneCardThumbnail src={scene.thumbURL} alt={`Cena de ${scene.originalTitle}`} />
       <SceneCardInformation>
-        <SceneCardAnimeTitle>{scene.originalTitle}</SceneCardAnimeTitle>
-        <SceneCardEpisodeOrdinaryNumber>{scene.episode}º episódio</SceneCardEpisodeOrdinaryNumber>
-        <SceneCardSimilarityPercentage>{scene.getReadableSimilarity()} de similaridade</SceneCardSimilarityPercentage>
+        <SceneCardAnimeTitle data-cy="scene-card-anime-title">{scene.originalTitle}</SceneCardAnimeTitle>
+        <SceneCardEpisodeOrdinaryNumber data-cy="scene-card-episode-ordinary-number">{scene.episode}º episódio</SceneCardEpisodeOrdinaryNumber>
+        <SceneCardSimilarityPercentage data-cy="scene-card-similarity-percentage">{scene.getReadableSimilarity()} de similaridade</SceneCardSimilarityPercentage>
       </SceneCardInformation>
     </SceneCardWrapper>
   );
