@@ -11,8 +11,9 @@ class Scene {
   portugueseTitle: string;
   originalTitle: string;
   thumbURL: string;
-
-  constructor(sceneObject: SceneDTO) {
+  index: number;
+  
+  constructor(sceneObject: SceneDTO, index: number) {
     const { anilist: { title, synonyms, isAdult }, episode, from, similarity, video, image } = sceneObject;
 
     this.videoURL = video;
@@ -23,6 +24,7 @@ class Scene {
     this.portugueseTitle = synonyms.at(3) || title.english;
     this.originalTitle = title.romaji;
     this.thumbURL = image;
+    this.index = index;
   }
 
   public getReadableSimilarity(): string {

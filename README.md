@@ -15,6 +15,8 @@
 
 - Tela de nenhum resultado encontrado
 - Tela de loading
+- Imagem do Paulo
+- Todas as &lt;input&gt;
 
 ## Motivação
 

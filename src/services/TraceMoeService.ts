@@ -42,7 +42,7 @@ class TraceMoeService {
       return null;
     }
 
-    const scenes: Scene[] = data.result.map((sceneObject) => new Scene(sceneObject));
+    const scenes: Scene[] = data.result.map((sceneObject, index) => new Scene(sceneObject, index));
     return this.sanitizeScenes(scenes);
   }
 }

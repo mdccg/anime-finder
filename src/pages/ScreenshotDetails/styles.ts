@@ -49,7 +49,6 @@ export const MainContent = styled.main`
   margin-top: 64px;
 
   flex-direction: row;
-  align-items: center;
   display: flex;
 
   min-height: 100vh;
@@ -63,12 +62,20 @@ export const SelectedScene = styled.div`
   flex-direction: column;
   display: flex;
   flex: 1;
+
+  margin-right: 32px;
+
+  @media only screen and (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 export const OtherScenes = styled.div`
   flex-direction: column;
   display: flex;
-  flex: calc(1 / 2);
+  flex: calc(1 / 3);
+
+  margin-bottom: 32px;
 `;
 
 export const Subheading = styled.h2`

@@ -5,6 +5,7 @@ import Footer from './../../components/Footer';
 import Logo from './../../components/Logo';
 import TraceMoeService from './../../services/TraceMoeService';
 import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SceneDescription, SelectedScene, Subheading } from './styles';
+import SceneCard from '../../components/SceneCard';
 
 type LocationStateType = {
   blob: Blob;
@@ -28,6 +29,13 @@ const ScreenshotDetails = () => {
   const finishFetching = () => {
     setIsFetching(false);
     setHadFetched(true);
+  }
+
+  const selectNewScene = (indexArg: number) => {
+    if (otherScenes) {
+      let selectedNewScene = otherScenes.find(({ index }) => index === indexArg) as Scene;
+      setSelectedScene(selectedNewScene);
+    }
   }
 
   useEffect(() => {
@@ -56,13 +64,13 @@ const ScreenshotDetails = () => {
         return;
       }
 
-      setSelectedScene(scenes.at(0) as Scene);
-      setOtherScenes(scenes.slice(1));
+      let selectedScene = scenes.at(0) as Scene;
+      setSelectedScene(selectedScene);
+      setOtherScenes(scenes);
       finishFetching();
     }
 
     fetchData();
-    finishFetching();
   }, [state, traceMoeService]);
 
   if (!state || !state.blob) {
@@ -87,8 +95,8 @@ const ScreenshotDetails = () => {
         {hadFetched && selectedScene && (
           <MainContent>
             <SelectedScene>
-              <video width="100%" controls>
-                <source src={selectedScene.videoURL} />
+              <video key={selectedScene.index} width="100%" controls>
+                <source key={selectedScene.index} src={selectedScene.videoURL} />
               </video>
 
               <Subheading>Detalhes da cena</Subheading>
@@ -104,7 +112,17 @@ const ScreenshotDetails = () => {
               </SceneDescription>
             </SelectedScene>
 
-            <OtherScenes>&nbsp;</OtherScenes>
+            {otherScenes && (
+              <OtherScenes>
+                {otherScenes.map((scene) => (
+                  <SceneCard  
+                    key={scene.index}
+                    scene={scene}
+                    selectedNewScene={selectNewScene}
+                    selectedSceneIndex={selectedScene.index} />
+                ))}
+              </OtherScenes>
+            )}
           </MainContent>
         )}
 
