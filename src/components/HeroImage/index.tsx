@@ -1,7 +1,19 @@
 import Logo from './../Logo';
+import { useNavigate } from 'react-router-dom';
 import { CloudArrowUpSolid, Columns, DraggableFileInput, Emphasis, Heading, HeroImageWrapper, DraggableFileInputLabel, LeftColumn, RightColumn, WebsiteDescription, ButtonFileInput, ImagesSolid, ButtonFileInputLabel, DraggableFileInputBounds } from './styles';
 
 const HeroImage = () => {
+  const navigate = useNavigate();
+  
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      const file = files[0];
+      const blob = new Blob([file], { type: file.type })
+      navigate('/screenshot-details', { state: { blob } });
+    }
+  }
+
   return (
     <HeroImageWrapper>
       <Logo color="white" />
@@ -21,17 +33,20 @@ const HeroImage = () => {
 
         <RightColumn>
           <DraggableFileInputBounds>
-            <DraggableFileInput>
-              <CloudArrowUpSolid />
-              <DraggableFileInputLabel>Jogue a imagem aqui</DraggableFileInputLabel>
-            </DraggableFileInput>
-
-            <ButtonFileInput>
+            <ButtonFileInput onClick={(event: React.MouseEvent<HTMLFormElement, MouseEvent>) => {
+              const inputFile = document.getElementById('arquivo') as HTMLInputElement;
+              inputFile.click();
+            }}>
               <ImagesSolid />
               <ButtonFileInputLabel>
                 Ou selecione um arquivo<br />
                 do computador
               </ButtonFileInputLabel>
+              <input
+                type="file"
+                id="arquivo"
+                onChange={handleFileSelect}
+                style={{ display: 'none' }} />
             </ButtonFileInput>
           </DraggableFileInputBounds>
         </RightColumn>

@@ -78,7 +78,7 @@ export const DraggableFileInputBounds = styled.div`
   display: flex;
 `;
 
-export const DraggableFileInput = styled.div`
+export const DraggableFileInput = styled.form`
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -114,7 +114,7 @@ export const DraggableFileInputLabel = styled.label`
   cursor: grab;
 `;
 
-export const ButtonFileInput = styled.div`
+export const ButtonFileInput = styled.form`
   margin-top: 32px;
 
   align-items: flex-start;
@@ -140,7 +140,7 @@ ImagesSolid.defaultProps = {
 };
 
 export const ButtonFileInputLabel = styled.label`
-  font-size: 112.5%;
+  font-size: 137.5%;
   text-align: center;
   font-weight: bold;
   line-height: 1.5;

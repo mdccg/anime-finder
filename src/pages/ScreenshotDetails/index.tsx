@@ -6,6 +6,9 @@ import Logo from './../../components/Logo';
 import TraceMoeService from './../../services/TraceMoeService';
 import { Header, ImagesSolid, MainContent, OtherScenes, PageWrapper, PickAnotherPictureButton, PickAnotherPictureButtonLabel, SceneDescription, SelectedScene, Subheading } from './styles';
 import SceneCard from '../../components/SceneCard';
+import GenericPanel from '../../components/GenericPanel';
+import { PacmanLoader } from 'react-spinners';
+import HeartCrackSolidSource from './../../assets/icons/heart-crack-solid.svg';
 
 type LocationStateType = {
   blob: Blob;
@@ -82,15 +85,17 @@ const ScreenshotDetails = () => {
       <PageWrapper>
         <Header>
           <Logo color="black" />
-          <PickAnotherPictureButton>
-            <ImagesSolid />
-            <PickAnotherPictureButtonLabel>
-              Escolher outra imagem
-            </PickAnotherPictureButtonLabel>
-          </PickAnotherPictureButton>
         </Header>
 
-        {isFetching && <>{/* TODO loading aqui */}</>}
+        {isFetching && (
+          <GenericPanel
+            message="Carregando&hellip;"
+            component={(
+            <>
+              <PacmanLoader color="black" />
+            </>
+          )} />
+        )}
 
         {hadFetched && selectedScene && (
           <MainContent>
@@ -126,7 +131,9 @@ const ScreenshotDetails = () => {
           </MainContent>
         )}
 
-        {hasNoResults && <>{/* TODO nao encontrado aqui */}</>}
+        {hasNoResults && (
+          <GenericPanel message="Nenhuma cena foi encontrada" imageURL={HeartCrackSolidSource} />
+        )}
       </PageWrapper>
       <Footer />
     </>
