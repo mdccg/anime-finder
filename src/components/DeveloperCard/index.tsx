@@ -21,7 +21,7 @@ import {
   RightDeveloperDescription,
   RightDeveloperName,
   WhatsApp,
-  RightDeveloperSocialMediaList
+  RightDeveloperSocialMediaList,
 } from './styles';
 
 type DeveloperCardProps = {
@@ -60,7 +60,7 @@ const DeveloperCard = ({
   const DeveloperDescription = isLeft ? LeftDeveloperDescription : RightDeveloperDescription;
   const DeveloperImage = isLeft ? LeftDeveloperImage : RightDeveloperImage;
   const DeveloperSocialMediaList = isLeft ? LeftDeveloperSocialMediaList : RightDeveloperSocialMediaList;
-  const responsivePaddingBottom = document.body.offsetWidth <= 768 ? `${pictureHeight + 32}px` : '64px';
+  const responsivePaddingBottom = document.body.offsetWidth <= 370 ? '32px' : (document.body.offsetWidth <= 768 ? `${pictureHeight + 32}px` : '64px');
 
   return (
     <DeveloperCardWrapper>

@@ -35,6 +35,11 @@ export const DeveloperCardFooter = styled.div`
   position: relative;
   display: flex;
   flex: 1;
+
+  @media only screen and (max-width: 370px) {
+    position: static;
+    overflow-x: hidden;
+  }
 `;
 
 export const LeftDeveloperCardPhotoSpace = styled.div`
@@ -167,6 +172,10 @@ export const Instagram = styled.img`
 
 export const developerPicture = css`
   position: absolute;
+
+  @media only screen and (max-width: 370px) {
+    position: static;
+  }
 `;
 
 export const LeftDeveloperImage = styled.img`
