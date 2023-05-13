@@ -71,7 +71,7 @@ const Home = () => {
       <DeveloperCard
         align="left"
         developerName="Paulo Daniel Moraes Ribeiro"
-        developerDescription="Viciado em Sonic The Hedgehog, jogador de Mario Kart, rato de academia, doutorando em ChatGPT e sobrevivente da turma do meio do ano"
+        developerDescription="Fã nato de Sonic The Hedgehog, jogador de Mario Kart, rato de academia, doutorando em ChatGPT e sobrevivente da turma do meio do ano"
         socialMedia={{
           github: 'https://github.com/paulodanielribeiro',
           whatsApp: 'https://wa.me/+556784719682',
@@ -79,7 +79,7 @@ const Home = () => {
           instagram: 'https://www.instagram.com/paulodanielribeiro/',
         }}
         profilePicture={PauloSource}
-        pictureHeight={531} />
+        pictureHeight={512} />
       
       <DeveloperCard
         align="right"
@@ -92,7 +92,7 @@ const Home = () => {
           instagram: 'https://www.instagram.com/rondoallaturca.mid/',
         }}
         profilePicture={MatheusSource}
-        pictureHeight={531} />
+        pictureHeight={512} />
 
       <TestDrive>
         <TestDriveExplanation>

@@ -80,6 +80,7 @@ export const OtherScenes = styled.div`
 
 export const Subheading = styled.h2`
   margin-top: 64px;
+  margin-bottom: 8px;
 `;
 
 export const SceneDescription = styled.span`

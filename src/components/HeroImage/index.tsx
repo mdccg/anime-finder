@@ -39,7 +39,7 @@ const HeroImage = () => {
             }}>
               <ImagesSolid />
               <ButtonFileInputLabel>
-                Ou selecione um arquivo<br />
+                Selecione um arquivo<br />
                 do computador
               </ButtonFileInputLabel>
               <input

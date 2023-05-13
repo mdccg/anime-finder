@@ -46,7 +46,6 @@ const ScreenshotDetails = () => {
       startFetching();
 
       if (!state) {
-        // TODO mostrar toast dizendo que não foi possível carregar a screenshot
         finishFetching();
         return;
       }
@@ -54,14 +53,11 @@ const ScreenshotDetails = () => {
       const scenes = await traceMoeService.getOccurrences(state.blob);
       
       if (scenes === null) {
-        // TODO mostrar toast de erro dizendo que deu zika
         finishFetching();
         return;
       }
 
       if (scenes.length === 0) {
-        // TODO mostrar toast de erro dizendo que não foi possível localizar nenhum anime
-        // com essa screenshot
         setHasNoResults(true);
         finishFetching();
         return;
@@ -90,11 +86,7 @@ const ScreenshotDetails = () => {
         {isFetching && (
           <GenericPanel
             message="Carregando&hellip;"
-            component={(
-            <>
-              <PacmanLoader color="black" />
-            </>
-          )} />
+            component={<PacmanLoader color="black" />} />
         )}
 
         {hadFetched && selectedScene && (

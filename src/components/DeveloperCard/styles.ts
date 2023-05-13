@@ -14,7 +14,7 @@ export const RightDeveloperCardWrapper = styled(LeftDeveloperCardWrapper)`
 `;
 
 export const LeftDeveloperCardBody = styled.div`
-  padding: 96px 64px 64px;
+  padding: 64px;
   box-sizing: border-box;
 
   flex-direction: row;
@@ -180,11 +180,7 @@ export const LeftDeveloperImage = styled.img`
 
 export const RightDeveloperImage = styled.img`
   ${developerPicture};
-  right: 64px;
-
-  @media only screen and (max-width: 768px) {
-    right: 6.25%;
-  }
+  right: 0;
 `;
 
 Github.defaultProps = {

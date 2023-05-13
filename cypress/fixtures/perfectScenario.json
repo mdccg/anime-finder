@@ -1,0 +1,37 @@
+{
+  "result": [
+    {
+      "anilist": {
+        "id": 16498,
+        "idMal": 16498,
+        "title": {
+          "native": "進撃の巨人",
+          "romaji": "Shingeki no Kyojin",
+          "english": "Attack on Titan"
+        },
+        "synonyms": [
+          "SnK",
+          "AoT",
+          "Ataque a los Titanes",
+          "Ataque dos Titãs",
+          "L'Attacco dei Giganti",
+          "מתקפת הטיטאנים",
+          "进击的巨人",
+          "L’Attaque des Titans",
+          "الهجوم على العمالقة",
+          "ผ่าพิภพไททัน",
+          "Atak Tytanów",
+          "حمله به تایتان"
+        ],
+        "isAdult": false
+      },
+      "filename": "[ReinForce] Shingeki no Kyojin - 01 (BDRip 1920x1080 x264 FLAC).mp4",
+      "episode": 1,
+      "from": 1112.33,
+      "to": 1113.92,
+      "similarity": 0.99,
+      "video": "https://media.trace.moe/video/16498/%5BReinForce%5D%20Shingeki%20no%20Kyojin%20-%2001%20(BDRip%201920x1080%20x264%20FLAC).mp4?t=1113.125&now=1683964800&token=FfSSLiwQfTptY3qDVlBhyYR2pTA",
+      "image": "https://media.trace.moe/image/16498/%5BReinForce%5D%20Shingeki%20no%20Kyojin%20-%2001%20(BDRip%201920x1080%20x264%20FLAC).mp4.jpg?t=1113.125&now=1683964800&token=lz1MJW1y7e5gcQTKyFW6viqTsA"
+    }
+  ]
+}

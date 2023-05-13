@@ -8,8 +8,10 @@ export const SceneCardWrapper = styled.div`
 
   flex-direction: column;
   display: flex;
-  flex: 1;
 
+  border-bottom-left-radius: ${borderRadius};
+  border-bottom-right-radius: ${borderRadius};
+  
   &:not(:last-child) {
     margin-bottom: 32px;
   }
@@ -23,8 +25,6 @@ export const SceneCardThumbnail = styled.img`
 `;
 
 export const SceneCardInformation = styled.div`
-  border-bottom-left-radius: ${borderRadius};
-  border-bottom-right-radius: ${borderRadius};
 
   flex-direction: column;
   display: flex;
