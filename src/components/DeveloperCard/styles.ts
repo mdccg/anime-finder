@@ -31,7 +31,7 @@ export const RightDeveloperCardBody = styled(LeftDeveloperCardBody)`
   flex-direction: row-reverse;
 `;
 
-export const DeveloperCardFooter = styled.div`
+export const LeftDeveloperCardFooter = styled.div`
   position: relative;
   display: flex;
   flex: 1;
@@ -39,6 +39,13 @@ export const DeveloperCardFooter = styled.div`
   @media only screen and (max-width: 370px) {
     position: static;
     overflow-x: hidden;
+  }
+`;
+
+export const RightDeveloperCardFooter = styled(LeftDeveloperCardFooter)`
+  @media only screen and (max-width: 370px) {
+    justify-content: flex-end;
+    display: flex;
   }
 `;
 
