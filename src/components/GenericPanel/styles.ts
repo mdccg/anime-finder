@@ -21,6 +21,7 @@ export const GenericPanelMessage = styled.span`
   margin-top: 32px;
 
   font-size: 150%;
+  text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
