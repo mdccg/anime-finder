@@ -18,7 +18,7 @@ O app foi construído pensando em oferecer aos usuários uma experiência em por
 
 Este foi o quinto repositório de código apresentado no [Curso Superior de TSI do IFMS](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) como requisito para obtenção da nota parcial das atividades da unidade curricular Construção de Páginas Web IV.
 
-| [&larr; Repositório anterior](https://github.com/mdccg/evolved-dictionary/) | [Próximo repositório &rarr;](https://github.com/mdccg/authentication-app/) |
+| [&larr; Repositório anterior](https://github.com/mdccg/evolved-dictionary/) | [Próximo repositório &rarr;](https://github.com/mdccg/facebook-authentication-demo/) |
 |-|-|
 
 ## Pilha de tecnologia
@@ -33,8 +33,7 @@ As seguintes tecnologias foram utilizadas para desenvolver este app:
 | Biblioteca de interface de usuário | [React](https://reactjs.org/) |
 | Empacotador de módulos | [create-react-app](https://create-react-app.dev/) |
 | Framework de teste | [Cypress](https://www.cypress.io/) |
-| Base de dados<sup>1</sup> | [Trace Moe](https://soruly.github.io/trace.moe-api/#/) |
-| Base de dados<sup>2</sup> | [AniList](https://github.com/AniList/ApiV2-GraphQL-Docs) |
+| Base de dados | [Trace Moe](https://soruly.github.io/trace.moe-api/#/) |
 
 Os créditos pelas mídias utilizadas estão disponíveis [aqui](./src/assets/README.md).
 
