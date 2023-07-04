@@ -18,7 +18,7 @@ O app foi construído pensando em oferecer aos usuários uma experiência em por
 
 Este foi o quinto repositório de código apresentado no [Curso Superior de TSI do IFMS](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) como requisito para obtenção da nota parcial das atividades da unidade curricular Construção de Páginas Web IV.
 
-| [&larr; Repositório anterior](https://github.com/mdccg/evolved-dictionary/) | [Próximo repositório &rarr;](https://github.com/mdccg/facebook-authentication-demo/) |
+| [&larr; Repositório anterior](https://github.com/mdccg/evolved-dictionary/) | [Próximo repositório &rarr;](https://github.com/mdccg/github-authentication-demo/) |
 |-|-|
 
 ## Pilha de tecnologia
